@@ -87,7 +87,8 @@ Usage of C:\Users\coder\GolandProjects\FindIcmpP\FindIcmpP.exe:
 
 <a name="XzicA"></a>
 #### 本地文件解析模式
-`FindIcmpP.exe -po -f etlFilePath -c` 即可解析本地的ETL文件，从而通过ETL文件获取到通信进程
+首先需要自己进行抓包.以管理员身份运行`netsh trace start capture=yes Protocol=1`,一段时间后关闭`netsh trace stop`
+随后`FindIcmpP.exe -po -f etlFilePath -c` 即可解析本地的ETL文件，从而通过ETL文件获取到通信进程
 <a name="Nklz5"></a>
 #### 输出
 在启用`-C`追踪文件的情况下才会有输出,会在`etl`的文件路径下生成一个`时间戳+result.csv`文件
