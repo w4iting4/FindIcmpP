@@ -98,3 +98,6 @@ Usage of C:\Users\coder\GolandProjects\FindIcmpP\FindIcmpP.exe:
 由于Icmp没有端口号,所用的响应都是操作系统来找寻线程的,所以一般你能在输出的CSV中看到很多来自父进程的或者系统进程的信息,建议关注SRCIP为受害机器的请求,那样你能很快定位到进程与文件
 ### 致谢
 感谢坤少🦸‍♂️与乐少🦸‍♂️对我的指导,没有两位师傅windows上排查会复杂很多
+参考:
+http://randomuserid.blogspot.com/2007/03/tracking-down-random-icmp-in-windows.html
+https://randomuserid.blogspot.com/2015/06/windows-icmp-redux.html
