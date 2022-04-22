@@ -64,7 +64,9 @@ root@VM-24-8-ubuntu:~#
 ```
 <a name="IVZNv"></a>
 ### 工具的工作原理
-通过`Netsh`抓取主机发送的`ICMP`数据包(目前只支持IPV4),随后对文件进行转储,解析.由于使用`Netsh`的`trace`功能需要管理员权限<br />**所以请使用管理员权限的**`**dos(cmd)**`**或者**`**powershell**`**运行该程序!**<br />**所以请使用管理员权限的**`**dos(cmd)**`**或者**`**powershell**`**运行该程序!**<br />**所以请使用管理员权限的**`**dos(cmd)**`**或者**`**powershell**`**运行该程序!**<br />详细流程:<br />![image.png](https://cdn.nlark.com/yuque/0/2022/png/2078172/1650381458421-0f67f04e-b85e-4ff6-8ebf-efbc9b625103.png#clientId=u51461c2d-5ad4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=569&id=u505145a0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=569&originWidth=603&originalType=binary&ratio=1&rotation=0&showTitle=false&size=49495&status=done&style=none&taskId=u782af941-39a4-47c5-b6b7-f3369cff937&title=&width=603)
+通过`Netsh`抓取主机发送的`ICMP`数据包(目前只支持IPV4),随后对文件进行转储,解析.由于使用`Netsh`的`trace`功能需要管理员权限<br />**所以请使用管理员权限的**`**dos(cmd)**`**或者**`**powershell**`**运行该程序!**<br />**所以请使用管理员权限的**`**dos(cmd)**`**或者**`**powershell**`**运行该程序!**<br />**所以请使用管理员权限的**`**dos(cmd)**`**或者**`**powershell**`**运行该程序!**<br />详细流程:<br />
+![image](https://user-images.githubusercontent.com/41547947/164730476-8ebd148b-19c3-452d-9f2f-af5339c980ee.png)
+
 <a name="n04j6"></a>
 ### 使用方法
 使用管理员权限启动控制台
@@ -82,11 +84,16 @@ Usage of C:\Users\coder\GolandProjects\FindIcmpP\FindIcmpP.exe:
 <a name="M0kdL"></a>
 #### 抓包解析模式
 使用`FindIcmpP.exe -t 3 -c`即可在主机抓取`ICMPV4`通信的进程
+
 <a name="XzicA"></a>
 #### 本地文件解析模式
 `FindIcmpP.exe -po -f etlFilePath -c` 即可解析本地的ETL文件，从而通过ETL文件获取到通信进程
 <a name="Nklz5"></a>
 #### 输出
-会在`etl`的文件路径下生成一个`时间戳+result.csv`文件
+在启用`-C`追踪文件的情况下才会有输出,会在`etl`的文件路径下生成一个`时间戳+result.csv`文件
+![image](https://user-images.githubusercontent.com/41547947/164730915-6d7fbc78-4441-4baf-b85f-909ed235223b.png)
+
+#### Windows下的一些细节
+由于Icmp没有端口号,所用的响应都是操作系统来找寻线程的,所以一般你能在输出的CSV中看到很多来自父进程的或者系统进程的信息,建议关注SRCIP为受害机器的请求,那样你能很快定位到进程与文件
 ### 致谢
 感谢坤少🦸‍♂️与乐少🦸‍♂️对我的指导,没有两位师傅windows上排查会复杂很多
