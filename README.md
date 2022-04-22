@@ -71,13 +71,13 @@ root@VM-24-8-ubuntu:~#
 ```go
 PS C:\Users\coder\GolandProjects\FindIcmpP> .\FindIcmpP.exe -h
 Usage of C:\Users\coder\GolandProjects\FindIcmpP\FindIcmpP.exe:
-  -c    默认模式下不会追踪启动进程的文件，如果选择该参数，则会追踪含有ICMP协议通信的文件
+  -c    默认模式下不会追踪启动进程的文件，如果不选择该参数，则不会有输出文件
   -f string
         选择-po的情况下，需要通过该参数来指定ETL文件路径
   -po
-        (该参数与-t互斥)如果选择该参数，则不会进行抓包，只会解析本地etl文件
+        如果选择该参数，则不会进行抓包，只会解析本地etl文件
   -t uint
-        (该参数与-po互斥)在主机抓包时长，默认10s,建议不超过30s (default 10)
+        在主机抓包时长，默认10s,建议不超过30s (default 10)
 ```
 <a name="M0kdL"></a>
 #### 抓包解析模式
