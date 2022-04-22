@@ -16,9 +16,9 @@ func Getflag() (uint, bool, string, bool) {
 	)
 	flag.UintVar(&Times, "t", 10, "在主机抓包时长，默认10s,建议不超过30s")
 	flag.BoolVar(&ParseEtlOnly, "po", false, "如果选择该参数，则不会进行抓包，只会解析本地etl文件")
-	flag.StringVar(&EtlFilePath, "f", "", "选择-p的情况下，需要通过该参数来指定ETL文件路径")
+	flag.StringVar(&EtlFilePath, "f", "", "选择-po的情况下，需要通过该参数来指定ETL文件路径")
 	//是否追踪进程文件 -catch
-	flag.BoolVar(&Catch, "c", false, "默认模式下不会追踪启动进程的文件，如果选择该参数，则会追踪含有ICMP协议通信的文件")
+	flag.BoolVar(&Catch, "c", false, "默认模式下不会追踪启动进程的文件，如果不选择该参数，则不会有输出文件")
 	flag.Parse() // 必须得parse 不然无法取值
 	return Times, ParseEtlOnly, EtlFilePath, Catch
 }
